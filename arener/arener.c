@@ -30,7 +30,7 @@ Arena* init_arena(size_t size)
     ret->cur_ptr = ret->arena_start;
 
 #ifdef DEBUG_ARENA
-    printf("Arena initialized at address %p with size %i\n", ret->arena_start, size);
+    printf("Arena initialized at address %p with size %lu\n", ret->arena_start, size);
 #endif
 
     return ret;
@@ -48,7 +48,7 @@ void destroy_arena(Arena* arena)
 void* get_next(Arena* arena, size_t size)
 {
 #ifdef DEBUG_ARENA
-    printf("New block of size %i requested for arena at address %p; ", size, arena->arena_start);
+    printf("New block of size %lu requested for arena at address %p; ", size, arena->arena_start);
 #endif
 
     // ((uint8_t*)(arena->cur_ptr)) += size; // uh, gcc throws error... yikes-y solution! ha ha.
