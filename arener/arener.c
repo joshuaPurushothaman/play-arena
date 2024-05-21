@@ -11,18 +11,18 @@ Arena* init_arena(size_t size)
     Arena* ret = (Arena*)malloc(sizeof(Arena));
 
     if (ret == NULL) {
-#ifdef DEBUG_ARENA
+// #ifdef DEBUG_ARENA
         printf("mem fail trying to make an Arena :(");
-#endif
+// #endif
         return NULL;
     }
 
     void* new_block = malloc(size);
 
     if (new_block == NULL) {
-#ifdef DEBUG_ARENA
+// #ifdef DEBUG_ARENA
         printf("mem fail trying to make a new_block :(");
-#endif
+// #endif
         return NULL;
     }
 
