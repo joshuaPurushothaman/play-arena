@@ -9,14 +9,14 @@ Arena* init_arena(size_t size) {
     Arena* ret = (Arena*)malloc(sizeof(Arena));
 
     if (ret == NULL) {
-        printf(CYAN"mem fail trying to make an Arena :("DEFAULT);
+        fprintf(stderr, CYAN"mem fail trying to make an Arena :("DEFAULT);
         return NULL;
     }
 
     void* new_block = malloc(size);
 
     if (new_block == NULL) {
-        printf(CYAN"mem fail trying to make a new_block :("DEFAULT);
+        fprintf(stderr, CYAN"mem fail trying to make a new_block :("DEFAULT);
         return NULL;
     }
 
